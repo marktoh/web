@@ -26,6 +26,8 @@ import TooltipMetricIcon from "../../Visualizations/Graph/TooltipMetricIcon";
 import { hasGraphData, getPlayerIdentity, getRoleLabels, getLaningRoles, getPlayerRoles, getLevelAtMinute, getStatAtMinute, LaneRole } from "./laning.utils";
 import Graph from "./Graph";
 
+import NetWorthShare from "./NetWorthShare";
+import HeroComparison from "./HeroComparison";
 
 
 import { getHeroLevel } from "../../Visualizations/Graph/data";
@@ -253,6 +255,12 @@ const Laning = ({ match }: LaningProps) => {
         </HeatmapContainer>
       </PageSection>
       <LaningEvents match={match} />
+      <PageSection aria-label={strings.laning_hero_comparison}>
+        <HeroComparison match={match} />
+      </PageSection>
+      <PageSection aria-label={strings.laning_team_share_heading}>
+        <NetWorthShare match={match} />
+      </PageSection>
       {hasGraphData(match, "networth", 10) && (
       <PageSection className="laning-chart-section" aria-label={strings.heading_graph_networth}>
         <Graph
