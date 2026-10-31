@@ -20,6 +20,7 @@ import Heading from "../../Heading/Heading";
 import Heatmap from "../../Heatmap/Heatmap";
 import LaningEvents from "./LaningEvents";
 import MatchGraph from "../../Visualizations/Graph/MatchGraph";
+import RoleComparison from "./RoleComparison";
 import LastHitsTable from "./LastHitsTable";
 import LaningTable, { TeamTable } from "./LaningTable";
 import TooltipMetricIcon from "../../Visualizations/Graph/TooltipMetricIcon";
@@ -255,6 +256,7 @@ const Laning = ({ match }: LaningProps) => {
         </HeatmapContainer>
       </PageSection>
       <LaningEvents match={match} />
+      <RoleComparison match={match} />
       <PageSection aria-label={strings.laning_hero_comparison}>
         <HeroComparison match={match} />
       </PageSection>
